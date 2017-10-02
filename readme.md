@@ -168,6 +168,9 @@ To run tests code you need:
 
 2. Write down your values domain name and authorization key
 
+3. Run:
+```go test``` or ```go test -v```
+
 
 ## Documentation for API Endpoints
 

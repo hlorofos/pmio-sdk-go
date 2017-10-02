@@ -12,7 +12,7 @@ package pmio
 
 type OauthClient struct {
 
-	Id int32 `json:"id,omitempty"`
+	Id string `json:"id,omitempty"`
 
 	Type_ string `json:"type"`
 
