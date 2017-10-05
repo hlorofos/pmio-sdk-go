@@ -1,7 +1,7 @@
 package tests
 
 import (
-	pmio "pmo-sdk-go/pmio"
+	"github.com/ProcessMaker/pmio-sdk-go/pmio"
 	"github.com/stretchr/testify/suite"
 )
 

@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"strconv"
 
-	pmio "pmo-sdk-go/pmio"
+	"github.com/ProcessMaker/pmio-sdk-go/pmio"
 )
 
 //Test case for AddUserToGroup

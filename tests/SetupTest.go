@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	pmio "pmo-sdk-go/pmio"
+	"github.com/ProcessMaker/pmio-sdk-go/pmio"
 )
 
 func (suite *ClientTestSuite) SetupTest() {
