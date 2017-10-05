@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"strconv"
 
-	pmio "pmo-sdk-go/pmio"
+	pmio "github.com/ProcessMaker/pmio-sdk-go"
 )
 
 //Test case for AddGroup
