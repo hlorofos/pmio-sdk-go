@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"strconv"
 
-	pmio "github.com/ProcessMaker/pmio-sdk-go"
+	pmio "pmo-sdk-go/pmio"
 )
 
 //Test case for DeleteProcess
@@ -15,6 +15,8 @@ func (suite *ClientTestSuite) TestDeleteProcess() {
 	processAtt.Name = "ProcessName" + rnd
 	processAtt.Status = "ACTIVE"
 	processAtt.Type_ = "NORMAL"
+	processAtt.DurationBy = "WORKING_DAYS"
+	processAtt.DesignAccess = "PUBLIC"
 
 	process := pmio.Process{}
 	process.Attributes = processAtt

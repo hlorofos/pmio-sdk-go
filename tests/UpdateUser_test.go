@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"strconv"
 
-	pmio "github.com/ProcessMaker/pmio-sdk-go"
+	pmio "pmo-sdk-go/pmio"
 )
 
 //Test case for UpdateUser

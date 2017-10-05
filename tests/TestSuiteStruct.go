@@ -1,11 +1,11 @@
 package tests
 
 import (
-	pmio "github.com/ProcessMaker/pmio-sdk-go"
+	pmio "pmo-sdk-go/pmio"
 	"github.com/stretchr/testify/suite"
 )
 
 type ClientTestSuite struct {
 	suite.Suite
-	client *pmio.Client
+	client *pmio.ClientApi
 }

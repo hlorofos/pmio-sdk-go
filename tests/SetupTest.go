@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	pmio "github.com/ProcessMaker/pmio-sdk-go"
+	pmio "pmo-sdk-go/pmio"
 )
 
 func (suite *ClientTestSuite) SetupTest() {
@@ -23,7 +23,7 @@ func (suite *ClientTestSuite) SetupTest() {
 		log.Fatal(err)
 	}
 
-	api := pmio.NewClient()
+	api := pmio.NewClientApi()
 	api.Configuration.BasePath = "https://" + cfg.Host + "/api/v1"
 	api.Configuration.Host = cfg.Host
 	api.Configuration.APIKey["Authorization"] = cfg.Key
