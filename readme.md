@@ -169,7 +169,7 @@ To run tests code you need:
 2. Write down your values domain name and authorization key
 
 3. Run:
-```go test``` or ```go test -v```
+```go test github.com/ProcessMaker/pmio-sdk-go/tests``` or ```go test -v github.com/ProcessMaker/pmio-sdk-go/tests```
 
 
 ## Documentation for API Endpoints
