@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"strconv"
 
-	pmio "pmo-sdk-go/pmio"
+	pmio "github.com/ProcessMaker/pmio-sdk-go"
 )
 
 //Test case for AddProcess
@@ -15,8 +15,6 @@ func (suite *ClientTestSuite) TestAddProcess() {
 	processAtt.Name = "ProcessName" + rnd
 	processAtt.Status = "ACTIVE"
 	processAtt.Type_ = "NORMAL"
-	processAtt.DurationBy = "WORKING_DAYS"
-	processAtt.DesignAccess = "PUBLIC"
 
 	process := pmio.Process{}
 	process.Attributes = processAtt
