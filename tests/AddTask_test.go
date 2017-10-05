@@ -17,6 +17,8 @@ func (suite *ClientTestSuite) TestAddTask() {
 	processAtt.Name = "ProcessName" + rnd
 	processAtt.Status = "ACTIVE"
 	processAtt.Type_ = "NORMAL"
+	processAtt.DurationBy = "WORKING_DAYS"
+	processAtt.DesignAccess = "PUBLIC"
 
 	process := pmio.Process{}
 	process.Attributes = processAtt
@@ -34,6 +36,7 @@ func (suite *ClientTestSuite) TestAddTask() {
 	taskAtt.ProcessId = processItem.Data.Id
 	taskAtt.Type_ = "SERVICE-TASK"
 	taskAtt.AssignType = "CYCLIC"
+	taskAtt.TransferFly = true
 
 	task := pmio.Task{}
 	task.Attributes = taskAtt

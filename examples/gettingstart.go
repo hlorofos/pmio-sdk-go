@@ -3,7 +3,7 @@ package main
 import (
 	"os"
     "log"
-    pmio "pmo-sdk-go/pmio"
+    "github.com/ProcessMaker/pmio-sdk-go/pmio"
 )
 
 
@@ -19,7 +19,7 @@ func main() {
     }
 
     //make API client and configurate them
-    api := pmio.NewClientApi()
+    api := pmio.NewClient()
     api.Configuration.BasePath = "https://" + apiHost + "/api/v1"
     api.Configuration.Host = apiHost
     api.Configuration.APIKey["Authorization"] = accessToken
