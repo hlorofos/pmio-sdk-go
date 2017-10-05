@@ -3,7 +3,7 @@ package tests
 import (
 	"io/ioutil"
 
-	pmio "github.com/ProcessMaker/pmio-sdk-go"
+	"github.com/ProcessMaker/pmio-sdk-go"
 )
 
 //Test case for ImportBpmnFile

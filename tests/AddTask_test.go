@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"strconv"
 
-	pmio "github.com/ProcessMaker/pmio-sdk-go"
+	"github.com/ProcessMaker/pmio-sdk-go"
 )
 
 //Test case for AddTask

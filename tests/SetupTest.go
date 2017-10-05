@@ -2,26 +2,21 @@ package tests
 
 import (
 	"encoding/json"
-	"log"
 	"math/rand"
 	"os"
 	"time"
 
-	pmio "github.com/ProcessMaker/pmio-sdk-go"
+	"github.com/ProcessMaker/pmio-sdk-go"
 )
 
 func (suite *ClientTestSuite) SetupTest() {
 	cfg := OauthConfig{}
 	configFile, err := os.Open("../env.json")
 	defer configFile.Close()
-	if err != nil {
-		log.Fatal(err)
-	}
+	suite.Require().NoError(err)
 
 	err = json.NewDecoder(configFile).Decode(&cfg)
-	if err != nil {
-		log.Fatal(err)
-	}
+	suite.Require().NoError(err)
 
 	api := pmio.NewClient()
 	api.Configuration.BasePath = "https://" + cfg.Host + "/api/v1"
