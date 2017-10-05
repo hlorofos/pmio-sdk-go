@@ -17,22 +17,22 @@ import (
 	"fmt"
 )
 
-type ClientApi struct {
+type Client struct {
 	Configuration *Configuration
 }
 
-func NewClientApi() *ClientApi {
+func NewClient() *Client {
 	configuration := NewConfiguration()
-	return &ClientApi{
+	return &Client{
 		Configuration: configuration,
 	}
 }
 
-func NewClientApiWithBasePath(basePath string) *ClientApi {
+func NewClientWithBasePath(basePath string) *Client {
 	configuration := NewConfiguration()
 	configuration.BasePath = basePath
 
-	return &ClientApi{
+	return &Client{
 		Configuration: configuration,
 	}
 }
@@ -45,7 +45,7 @@ func NewClientApiWithBasePath(basePath string) *ClientApi {
  * @param eventCreateItem JSON API response with the event object to add
  * @return *EventItem
  */
-func (a ClientApi) AddEvent(processId string, eventCreateItem EventCreateItem) (*EventItem, *APIResponse, error) {
+func (a Client) AddEvent(processId string, eventCreateItem EventCreateItem) (*EventItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -113,7 +113,7 @@ func (a ClientApi) AddEvent(processId string, eventCreateItem EventCreateItem) (
  * @param eventConnectorCreateItem JSON API with the EventConnector object to add
  * @return *EventConnector1
  */
-func (a ClientApi) AddEventConnector(processId string, eventId string, eventConnectorCreateItem EventConnectorCreateItem) (*EventConnector1, *APIResponse, error) {
+func (a Client) AddEventConnector(processId string, eventId string, eventConnectorCreateItem EventConnectorCreateItem) (*EventConnector1, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -181,7 +181,7 @@ func (a ClientApi) AddEventConnector(processId string, eventId string, eventConn
  * @param flowCreateItem JSON API response with the Flow object to add
  * @return *FlowItem
  */
-func (a ClientApi) AddFlow(processId string, flowCreateItem FlowCreateItem) (*FlowItem, *APIResponse, error) {
+func (a Client) AddFlow(processId string, flowCreateItem FlowCreateItem) (*FlowItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -248,7 +248,7 @@ func (a ClientApi) AddFlow(processId string, flowCreateItem FlowCreateItem) (*Fl
  * @param gatewayCreateItem JSON API response with the gateway object to add
  * @return *GatewayItem
  */
-func (a ClientApi) AddGateway(processId string, gatewayCreateItem GatewayCreateItem) (*GatewayItem, *APIResponse, error) {
+func (a Client) AddGateway(processId string, gatewayCreateItem GatewayCreateItem) (*GatewayItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -314,7 +314,7 @@ func (a ClientApi) AddGateway(processId string, gatewayCreateItem GatewayCreateI
  * @param groupCreateItem JSON API with the Group object to add
  * @return *GroupItem
  */
-func (a ClientApi) AddGroup(groupCreateItem GroupCreateItem) (*GroupItem, *APIResponse, error) {
+func (a Client) AddGroup(groupCreateItem GroupCreateItem) (*GroupItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -381,7 +381,7 @@ func (a ClientApi) AddGroup(groupCreateItem GroupCreateItem) (*GroupItem, *APIRe
  * @param taskAddGroupsItem JSON API with Group IDs to add
  * @return *ResultSuccess
  */
-func (a ClientApi) AddGroupsToTask(processId string, taskId string, taskAddGroupsItem TaskAddGroupsItem) (*ResultSuccess, *APIResponse, error) {
+func (a Client) AddGroupsToTask(processId string, taskId string, taskAddGroupsItem TaskAddGroupsItem) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -450,7 +450,7 @@ func (a ClientApi) AddGroupsToTask(processId string, taskId string, taskAddGroup
  * @param inputOutputCreateItem Create and add a new Input/Output object with JSON API
  * @return *InputOutputItem
  */
-func (a ClientApi) AddInputOutput(processId string, taskId string, inputOutputCreateItem InputOutputCreateItem) (*InputOutputItem, *APIResponse, error) {
+func (a Client) AddInputOutput(processId string, taskId string, inputOutputCreateItem InputOutputCreateItem) (*InputOutputItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -518,7 +518,7 @@ func (a ClientApi) AddInputOutput(processId string, taskId string, inputOutputCr
  * @param instanceCreateItem JSON API response with the instance object to add
  * @return *InstanceItem
  */
-func (a ClientApi) AddInstance(processId string, instanceCreateItem InstanceCreateItem) (*InstanceItem, *APIResponse, error) {
+func (a Client) AddInstance(processId string, instanceCreateItem InstanceCreateItem) (*InstanceItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -585,7 +585,7 @@ func (a ClientApi) AddInstance(processId string, instanceCreateItem InstanceCrea
  * @param oauthClientCreateItem JSON API with the Oauth Client object to add
  * @return *OauthClientItem
  */
-func (a ClientApi) AddOauthClient(userId string, oauthClientCreateItem OauthClientCreateItem) (*OauthClientItem, *APIResponse, error) {
+func (a Client) AddOauthClient(userId string, oauthClientCreateItem OauthClientCreateItem) (*OauthClientItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -651,7 +651,7 @@ func (a ClientApi) AddOauthClient(userId string, oauthClientCreateItem OauthClie
  * @param processCreateItem JSON API response with the process object to add
  * @return *ProcessItem
  */
-func (a ClientApi) AddProcess(processCreateItem ProcessCreateItem) (*ProcessItem, *APIResponse, error) {
+func (a Client) AddProcess(processCreateItem ProcessCreateItem) (*ProcessItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -717,7 +717,7 @@ func (a ClientApi) AddProcess(processCreateItem ProcessCreateItem) (*ProcessItem
  * @param taskCreateItem JSON API with the task object to add
  * @return *TaskItem
  */
-func (a ClientApi) AddTask(processId string, taskCreateItem TaskCreateItem) (*TaskItem, *APIResponse, error) {
+func (a Client) AddTask(processId string, taskCreateItem TaskCreateItem) (*TaskItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -785,7 +785,7 @@ func (a ClientApi) AddTask(processId string, taskCreateItem TaskCreateItem) (*Ta
  * @param taskConnectorCreateItem JSON API with the TaskConnector object to add
  * @return *TaskConnector1
  */
-func (a ClientApi) AddTaskConnector(processId string, taskId string, taskConnectorCreateItem TaskConnectorCreateItem) (*TaskConnector1, *APIResponse, error) {
+func (a Client) AddTaskConnector(processId string, taskId string, taskConnectorCreateItem TaskConnectorCreateItem) (*TaskConnector1, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -852,7 +852,7 @@ func (a ClientApi) AddTaskConnector(processId string, taskId string, taskConnect
  * @param userCreateItem JSON API with the User object to add
  * @return *UserItem
  */
-func (a ClientApi) AddUser(userCreateItem UserCreateItem) (*UserItem, *APIResponse, error) {
+func (a Client) AddUser(userCreateItem UserCreateItem) (*UserItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -918,7 +918,7 @@ func (a ClientApi) AddUser(userCreateItem UserCreateItem) (*UserItem, *APIRespon
  * @param groupAddUsersItem JSON API response with array of user IDs
  * @return *ResultSuccess
  */
-func (a ClientApi) AddUsersToGroup(id string, groupAddUsersItem GroupAddUsersItem) (*ResultSuccess, *APIResponse, error) {
+func (a Client) AddUsersToGroup(id string, groupAddUsersItem GroupAddUsersItem) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -985,7 +985,7 @@ func (a ClientApi) AddUsersToGroup(id string, groupAddUsersItem GroupAddUsersIte
  * @param eventId ID of the event to delete
  * @return *ResultSuccess
  */
-func (a ClientApi) DeleteEvent(processId string, eventId string) (*ResultSuccess, *APIResponse, error) {
+func (a Client) DeleteEvent(processId string, eventId string) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -1052,7 +1052,7 @@ func (a ClientApi) DeleteEvent(processId string, eventId string) (*ResultSuccess
  * @param connectorId ID of EventConnector to fetch
  * @return *ResultSuccess
  */
-func (a ClientApi) DeleteEventConnector(processId string, eventId string, connectorId string) (*ResultSuccess, *APIResponse, error) {
+func (a Client) DeleteEventConnector(processId string, eventId string, connectorId string) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -1119,7 +1119,7 @@ func (a ClientApi) DeleteEventConnector(processId string, eventId string, connec
  * @param flowId ID of the flow to delete
  * @return *ResultSuccess
  */
-func (a ClientApi) DeleteFlow(processId string, flowId string) (*ResultSuccess, *APIResponse, error) {
+func (a Client) DeleteFlow(processId string, flowId string) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -1185,7 +1185,7 @@ func (a ClientApi) DeleteFlow(processId string, flowId string) (*ResultSuccess, 
  * @param gatewayId ID of the process to delete
  * @return *ResultSuccess
  */
-func (a ClientApi) DeleteGateway(processId string, gatewayId string) (*ResultSuccess, *APIResponse, error) {
+func (a Client) DeleteGateway(processId string, gatewayId string) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -1250,7 +1250,7 @@ func (a ClientApi) DeleteGateway(processId string, gatewayId string) (*ResultSuc
  * @param id ID of group to delete
  * @return *ResultSuccess
  */
-func (a ClientApi) DeleteGroup(id string) (*ResultSuccess, *APIResponse, error) {
+func (a Client) DeleteGroup(id string) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -1316,7 +1316,7 @@ func (a ClientApi) DeleteGroup(id string) (*ResultSuccess, *APIResponse, error) 
  * @param inputoutputUid Input/Output ID to fetch
  * @return *ResultSuccess
  */
-func (a ClientApi) DeleteInputOutput(processId string, taskId string, inputoutputUid string) (*ResultSuccess, *APIResponse, error) {
+func (a Client) DeleteInputOutput(processId string, taskId string, inputoutputUid string) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -1383,7 +1383,7 @@ func (a ClientApi) DeleteInputOutput(processId string, taskId string, inputoutpu
  * @param instanceId ID of the instance to delete
  * @return *ResultSuccess
  */
-func (a ClientApi) DeleteInstance(processId string, instanceId string) (*ResultSuccess, *APIResponse, error) {
+func (a Client) DeleteInstance(processId string, instanceId string) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -1449,7 +1449,7 @@ func (a ClientApi) DeleteInstance(processId string, instanceId string) (*ResultS
  * @param clientId ID of Oauth client to delete
  * @return *ResultSuccess
  */
-func (a ClientApi) DeleteOauthClient(userId string, clientId string) (*ResultSuccess, *APIResponse, error) {
+func (a Client) DeleteOauthClient(userId string, clientId string) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -1514,7 +1514,7 @@ func (a ClientApi) DeleteOauthClient(userId string, clientId string) (*ResultSuc
  * @param id Process ID to delete
  * @return *ResultSuccess
  */
-func (a ClientApi) DeleteProcess(id string) (*ResultSuccess, *APIResponse, error) {
+func (a Client) DeleteProcess(id string) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -1579,7 +1579,7 @@ func (a ClientApi) DeleteProcess(id string) (*ResultSuccess, *APIResponse, error
  * @param taskId ID of a task to delete
  * @return *ResultSuccess
  */
-func (a ClientApi) DeleteTask(processId string, taskId string) (*ResultSuccess, *APIResponse, error) {
+func (a Client) DeleteTask(processId string, taskId string) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -1646,7 +1646,7 @@ func (a ClientApi) DeleteTask(processId string, taskId string) (*ResultSuccess, 
  * @param connectorId ID of TaskConnector to fetch
  * @return *ResultSuccess
  */
-func (a ClientApi) DeleteTaskConnector(processId string, taskId string, connectorId string) (*ResultSuccess, *APIResponse, error) {
+func (a Client) DeleteTaskConnector(processId string, taskId string, connectorId string) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -1712,7 +1712,7 @@ func (a ClientApi) DeleteTaskConnector(processId string, taskId string, connecto
  * @param id ID of user to delete
  * @return *ResultSuccess
  */
-func (a ClientApi) DeleteUser(id string) (*ResultSuccess, *APIResponse, error) {
+func (a Client) DeleteUser(id string) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -1778,7 +1778,7 @@ func (a ClientApi) DeleteUser(id string) (*ResultSuccess, *APIResponse, error) {
  * @param triggerEventCreateItem Json with some parameters
  * @return *DataModelItem1
  */
-func (a ClientApi) EventTrigger(processId string, eventId string, triggerEventCreateItem TriggerEventCreateItem) (*DataModelItem1, *APIResponse, error) {
+func (a Client) EventTrigger(processId string, eventId string, triggerEventCreateItem TriggerEventCreateItem) (*DataModelItem1, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -1847,7 +1847,7 @@ func (a ClientApi) EventTrigger(processId string, eventId string, triggerEventCr
  * @param triggerBody Freeform JSON structure, it will be passed to the newly created DataModel
  * @return *string
  */
-func (a ClientApi) EventWebhook(processId string, eventId string, triggerBody string) (*string, *APIResponse, error) {
+func (a Client) EventWebhook(processId string, eventId string, triggerBody string) (*string, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -1917,7 +1917,7 @@ func (a ClientApi) EventWebhook(processId string, eventId string, triggerBody st
  * @param perPage Amount of items per page
  * @return *DataModelCollection
  */
-func (a ClientApi) FindByFieldInsideDataModel(processId string, searchParam string, page int32, perPage int32) (*DataModelCollection, *APIResponse, error) {
+func (a Client) FindByFieldInsideDataModel(processId string, searchParam string, page int32, perPage int32) (*DataModelCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -1987,7 +1987,7 @@ func (a ClientApi) FindByFieldInsideDataModel(processId string, searchParam stri
  * @param perPage Amount of items per page
  * @return *DataModelItem1
  */
-func (a ClientApi) FindDataModel(processId string, instanceId string, page int32, perPage int32) (*DataModelItem1, *APIResponse, error) {
+func (a Client) FindDataModel(processId string, instanceId string, page int32, perPage int32) (*DataModelItem1, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2055,7 +2055,7 @@ func (a ClientApi) FindDataModel(processId string, instanceId string, page int32
  * @param eventId ID of the event to return
  * @return *EventItem
  */
-func (a ClientApi) FindEventById(processId string, eventId string) (*EventItem, *APIResponse, error) {
+func (a Client) FindEventById(processId string, eventId string) (*EventItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2122,7 +2122,7 @@ func (a ClientApi) FindEventById(processId string, eventId string) (*EventItem, 
  * @param connectorId ID of EventConnector to fetch
  * @return *EventConnector1
  */
-func (a ClientApi) FindEventConnectorById(processId string, eventId string, connectorId string) (*EventConnector1, *APIResponse, error) {
+func (a Client) FindEventConnectorById(processId string, eventId string, connectorId string) (*EventConnector1, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2191,7 +2191,7 @@ func (a ClientApi) FindEventConnectorById(processId string, eventId string, conn
  * @param perPage Amount of items per page
  * @return *EventConnectorsCollection
  */
-func (a ClientApi) FindEventConnectors(processId string, eventId string, page int32, perPage int32) (*EventConnectorsCollection, *APIResponse, error) {
+func (a Client) FindEventConnectors(processId string, eventId string, page int32, perPage int32) (*EventConnectorsCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2260,7 +2260,7 @@ func (a ClientApi) FindEventConnectors(processId string, eventId string, page in
  * @param perPage Amount of items per page
  * @return *EventCollection
  */
-func (a ClientApi) FindEvents(processId string, page int32, perPage int32) (*EventCollection, *APIResponse, error) {
+func (a Client) FindEvents(processId string, page int32, perPage int32) (*EventCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2327,7 +2327,7 @@ func (a ClientApi) FindEvents(processId string, page int32, perPage int32) (*Eve
  * @param flowId ID of the flow to return
  * @return *FlowItem
  */
-func (a ClientApi) FindFlowById(processId string, flowId string) (*FlowItem, *APIResponse, error) {
+func (a Client) FindFlowById(processId string, flowId string) (*FlowItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2394,7 +2394,7 @@ func (a ClientApi) FindFlowById(processId string, flowId string) (*FlowItem, *AP
  * @param perPage Amount of items per page
  * @return *FlowCollection
  */
-func (a ClientApi) FindFlows(processId string, page int32, perPage int32) (*FlowCollection, *APIResponse, error) {
+func (a Client) FindFlows(processId string, page int32, perPage int32) (*FlowCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2461,7 +2461,7 @@ func (a ClientApi) FindFlows(processId string, page int32, perPage int32) (*Flow
  * @param gatewayId ID of gateway to return
  * @return *GatewayItem
  */
-func (a ClientApi) FindGatewayById(processId string, gatewayId string) (*GatewayItem, *APIResponse, error) {
+func (a Client) FindGatewayById(processId string, gatewayId string) (*GatewayItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2528,7 +2528,7 @@ func (a ClientApi) FindGatewayById(processId string, gatewayId string) (*Gateway
  * @param perPage Amount of items per page
  * @return *GatewayCollection
  */
-func (a ClientApi) FindGateways(processId string, page int32, perPage int32) (*GatewayCollection, *APIResponse, error) {
+func (a Client) FindGateways(processId string, page int32, perPage int32) (*GatewayCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2594,7 +2594,7 @@ func (a ClientApi) FindGateways(processId string, page int32, perPage int32) (*G
  * @param id ID of group to return
  * @return *GroupItem
  */
-func (a ClientApi) FindGroupById(id string) (*GroupItem, *APIResponse, error) {
+func (a Client) FindGroupById(id string) (*GroupItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2659,7 +2659,7 @@ func (a ClientApi) FindGroupById(id string) (*GroupItem, *APIResponse, error) {
  * @param perPage Amount of items per page
  * @return *GroupCollection
  */
-func (a ClientApi) FindGroups(page int32, perPage int32) (*GroupCollection, *APIResponse, error) {
+func (a Client) FindGroups(page int32, perPage int32) (*GroupCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2726,7 +2726,7 @@ func (a ClientApi) FindGroups(page int32, perPage int32) (*GroupCollection, *API
  * @param inputoutputUid ID of Input/Output to return
  * @return *InputOutputItem
  */
-func (a ClientApi) FindInputOutputById(processId string, taskId string, inputoutputUid string) (*InputOutputItem, *APIResponse, error) {
+func (a Client) FindInputOutputById(processId string, taskId string, inputoutputUid string) (*InputOutputItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2795,7 +2795,7 @@ func (a ClientApi) FindInputOutputById(processId string, taskId string, inputout
  * @param perPage Amount of items per page
  * @return *InputOutputCollection
  */
-func (a ClientApi) FindInputOutputs(processId string, taskId string, page int32, perPage int32) (*InputOutputCollection, *APIResponse, error) {
+func (a Client) FindInputOutputs(processId string, taskId string, page int32, perPage int32) (*InputOutputCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2863,7 +2863,7 @@ func (a ClientApi) FindInputOutputs(processId string, taskId string, page int32,
  * @param instanceId ID of the instance to return
  * @return *InstanceItem
  */
-func (a ClientApi) FindInstanceById(processId string, instanceId string) (*InstanceItem, *APIResponse, error) {
+func (a Client) FindInstanceById(processId string, instanceId string) (*InstanceItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2930,7 +2930,7 @@ func (a ClientApi) FindInstanceById(processId string, instanceId string) (*Insta
  * @param perPage Amount of items per page
  * @return *InstanceCollection
  */
-func (a ClientApi) FindInstances(processId string, page int32, perPage int32) (*InstanceCollection, *APIResponse, error) {
+func (a Client) FindInstances(processId string, page int32, perPage int32) (*InstanceCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -2997,7 +2997,7 @@ func (a ClientApi) FindInstances(processId string, page int32, perPage int32) (*
  * @param clientId ID of Oauth client to retrieve
  * @return *OauthClientItem
  */
-func (a ClientApi) FindOauthClientById(userId string, clientId string) (*OauthClientItem, *APIResponse, error) {
+func (a Client) FindOauthClientById(userId string, clientId string) (*OauthClientItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3064,7 +3064,7 @@ func (a ClientApi) FindOauthClientById(userId string, clientId string) (*OauthCl
  * @param perPage Amount of items per page
  * @return *OauthClientCollection
  */
-func (a ClientApi) FindOauthClients(userId string, page int32, perPage int32) (*OauthClientCollection, *APIResponse, error) {
+func (a Client) FindOauthClients(userId string, page int32, perPage int32) (*OauthClientCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3130,7 +3130,7 @@ func (a ClientApi) FindOauthClients(userId string, page int32, perPage int32) (*
  * @param id ID of the process to return
  * @return *ProcessItem
  */
-func (a ClientApi) FindProcessById(id string) (*ProcessItem, *APIResponse, error) {
+func (a Client) FindProcessById(id string) (*ProcessItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3195,7 +3195,7 @@ func (a ClientApi) FindProcessById(id string) (*ProcessItem, *APIResponse, error
  * @param perPage Amount of items per page
  * @return *ProcessCollection
  */
-func (a ClientApi) FindProcesses(page int32, perPage int32) (*ProcessCollection, *APIResponse, error) {
+func (a Client) FindProcesses(page int32, perPage int32) (*ProcessCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3261,7 +3261,7 @@ func (a ClientApi) FindProcesses(page int32, perPage int32) (*ProcessCollection,
  * @param taskId ID of the task to return
  * @return *TaskItem
  */
-func (a ClientApi) FindTaskById(processId string, taskId string) (*TaskItem, *APIResponse, error) {
+func (a Client) FindTaskById(processId string, taskId string) (*TaskItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3328,7 +3328,7 @@ func (a ClientApi) FindTaskById(processId string, taskId string) (*TaskItem, *AP
  * @param connectorId ID of TaskConnector to fetch
  * @return *TaskConnector1
  */
-func (a ClientApi) FindTaskConnectorById(processId string, taskId string, connectorId string) (*TaskConnector1, *APIResponse, error) {
+func (a Client) FindTaskConnectorById(processId string, taskId string, connectorId string) (*TaskConnector1, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3397,7 +3397,7 @@ func (a ClientApi) FindTaskConnectorById(processId string, taskId string, connec
  * @param perPage Amount of items per page
  * @return *TaskConnectorsCollection
  */
-func (a ClientApi) FindTaskConnectors(processId string, taskId string, page int32, perPage int32) (*TaskConnectorsCollection, *APIResponse, error) {
+func (a Client) FindTaskConnectors(processId string, taskId string, page int32, perPage int32) (*TaskConnectorsCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3466,7 +3466,7 @@ func (a ClientApi) FindTaskConnectors(processId string, taskId string, page int3
  * @param perPage Amount of items per page
  * @return *InlineResponse200
  */
-func (a ClientApi) FindTaskInstanceById(taskInstanceId string, page int32, perPage int32) (*InlineResponse200, *APIResponse, error) {
+func (a Client) FindTaskInstanceById(taskInstanceId string, page int32, perPage int32) (*InlineResponse200, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3533,7 +3533,7 @@ func (a ClientApi) FindTaskInstanceById(taskInstanceId string, page int32, perPa
  * @param perPage Amount of items per page
  * @return *TaskInstanceCollection
  */
-func (a ClientApi) FindTaskInstances(page int32, perPage int32) (*TaskInstanceCollection, *APIResponse, error) {
+func (a Client) FindTaskInstances(page int32, perPage int32) (*TaskInstanceCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3599,7 +3599,7 @@ func (a ClientApi) FindTaskInstances(page int32, perPage int32) (*TaskInstanceCo
  * @param taskId ID of the task
  * @return *TaskInstanceCollection
  */
-func (a ClientApi) FindTaskInstancesByInstanceAndTaskId(instanceId string, taskId string) (*TaskInstanceCollection, *APIResponse, error) {
+func (a Client) FindTaskInstancesByInstanceAndTaskId(instanceId string, taskId string) (*TaskInstanceCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3665,7 +3665,7 @@ func (a ClientApi) FindTaskInstancesByInstanceAndTaskId(instanceId string, taskI
  * @param taskId ID of the task
  * @return *TaskInstanceCollection
  */
-func (a ClientApi) FindTaskInstancesByInstanceAndTaskIdDelegated(instanceId string, taskId string) (*TaskInstanceCollection, *APIResponse, error) {
+func (a Client) FindTaskInstancesByInstanceAndTaskIdDelegated(instanceId string, taskId string) (*TaskInstanceCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3731,7 +3731,7 @@ func (a ClientApi) FindTaskInstancesByInstanceAndTaskIdDelegated(instanceId stri
  * @param taskId ID of the task
  * @return *TaskInstanceCollection
  */
-func (a ClientApi) FindTaskInstancesByInstanceAndTaskIdStarted(instanceId string, taskId string) (*TaskInstanceCollection, *APIResponse, error) {
+func (a Client) FindTaskInstancesByInstanceAndTaskIdStarted(instanceId string, taskId string) (*TaskInstanceCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3798,7 +3798,7 @@ func (a ClientApi) FindTaskInstancesByInstanceAndTaskIdStarted(instanceId string
  * @param perPage Amount of items per page
  * @return *TaskCollection
  */
-func (a ClientApi) FindTasks(processId string, page int32, perPage int32) (*TaskCollection, *APIResponse, error) {
+func (a Client) FindTasks(processId string, page int32, perPage int32) (*TaskCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3867,7 +3867,7 @@ func (a ClientApi) FindTasks(processId string, page int32, perPage int32) (*Task
  * @param perPage Amount of items per page
  * @return *TokenCollection
  */
-func (a ClientApi) FindTokens(processId string, instanceId string, page int32, perPage int32) (*TokenCollection, *APIResponse, error) {
+func (a Client) FindTokens(processId string, instanceId string, page int32, perPage int32) (*TokenCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3934,7 +3934,7 @@ func (a ClientApi) FindTokens(processId string, instanceId string, page int32, p
  * @param id ID of the user to return
  * @return *UserItem
  */
-func (a ClientApi) FindUserById(id string) (*UserItem, *APIResponse, error) {
+func (a Client) FindUserById(id string) (*UserItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -3999,7 +3999,7 @@ func (a ClientApi) FindUserById(id string) (*UserItem, *APIResponse, error) {
  * @param perPage Amount of items per page
  * @return *UserCollection
  */
-func (a ClientApi) FindUsers(page int32, perPage int32) (*UserCollection, *APIResponse, error) {
+func (a Client) FindUsers(page int32, perPage int32) (*UserCollection, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -4064,7 +4064,7 @@ func (a ClientApi) FindUsers(page int32, perPage int32) (*UserCollection, *APIRe
  * @param bpmnImportItem JSON API with the BPMN file to import
  * @return *ProcessCollection1
  */
-func (a ClientApi) ImportBpmnFile(bpmnImportItem BpmnImportItem) (*ProcessCollection1, *APIResponse, error) {
+func (a Client) ImportBpmnFile(bpmnImportItem BpmnImportItem) (*ProcessCollection1, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -4130,7 +4130,7 @@ func (a ClientApi) ImportBpmnFile(bpmnImportItem BpmnImportItem) (*ProcessCollec
  * @param perPage Amount of items per page
  * @return *UserItem
  */
-func (a ClientApi) MyselfUser(page int32, perPage int32) (*UserItem, *APIResponse, error) {
+func (a Client) MyselfUser(page int32, perPage int32) (*UserItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -4197,7 +4197,7 @@ func (a ClientApi) MyselfUser(page int32, perPage int32) (*UserItem, *APIRespons
  * @param taskRemoveGroupsItem JSON API response with Group IDs to remove
  * @return *ResultSuccess
  */
-func (a ClientApi) RemoveGroupsFromTask(processId string, taskId string, taskRemoveGroupsItem TaskRemoveGroupsItem) (*ResultSuccess, *APIResponse, error) {
+func (a Client) RemoveGroupsFromTask(processId string, taskId string, taskRemoveGroupsItem TaskRemoveGroupsItem) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -4265,7 +4265,7 @@ func (a ClientApi) RemoveGroupsFromTask(processId string, taskId string, taskRem
  * @param groupRemoveUsersItem JSON API response with Users IDs to remove
  * @return *ResultSuccess
  */
-func (a ClientApi) RemoveUsersFromGroup(id string, groupRemoveUsersItem GroupRemoveUsersItem) (*ResultSuccess, *APIResponse, error) {
+func (a Client) RemoveUsersFromGroup(id string, groupRemoveUsersItem GroupRemoveUsersItem) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -4333,7 +4333,7 @@ func (a ClientApi) RemoveUsersFromGroup(id string, groupRemoveUsersItem GroupRem
  * @param taskSyncGroupsItem JSON API response with group IDs to sync
  * @return *ResultSuccess
  */
-func (a ClientApi) SyncGroupsToTask(processId string, taskId string, taskSyncGroupsItem TaskSyncGroupsItem) (*ResultSuccess, *APIResponse, error) {
+func (a Client) SyncGroupsToTask(processId string, taskId string, taskSyncGroupsItem TaskSyncGroupsItem) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -4401,7 +4401,7 @@ func (a ClientApi) SyncGroupsToTask(processId string, taskId string, taskSyncGro
  * @param groupSyncUsersItem JSON API with array of users IDs to sync
  * @return *ResultSuccess
  */
-func (a ClientApi) SyncUsersToGroup(id string, groupSyncUsersItem GroupSyncUsersItem) (*ResultSuccess, *APIResponse, error) {
+func (a Client) SyncUsersToGroup(id string, groupSyncUsersItem GroupSyncUsersItem) (*ResultSuccess, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -4469,7 +4469,7 @@ func (a ClientApi) SyncUsersToGroup(id string, groupSyncUsersItem GroupSyncUsers
  * @param eventUpdateItem Event object to edit
  * @return *EventItem
  */
-func (a ClientApi) UpdateEvent(processId string, eventId string, eventUpdateItem EventUpdateItem) (*EventItem, *APIResponse, error) {
+func (a Client) UpdateEvent(processId string, eventId string, eventUpdateItem EventUpdateItem) (*EventItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -4539,7 +4539,7 @@ func (a ClientApi) UpdateEvent(processId string, eventId string, eventUpdateItem
  * @param eventConnectorUpdateItem EventConnector object to edit
  * @return *EventConnector1
  */
-func (a ClientApi) UpdateEventConnector(processId string, eventId string, connectorId string, eventConnectorUpdateItem EventConnectorUpdateItem) (*EventConnector1, *APIResponse, error) {
+func (a Client) UpdateEventConnector(processId string, eventId string, connectorId string, eventConnectorUpdateItem EventConnectorUpdateItem) (*EventConnector1, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -4609,7 +4609,7 @@ func (a ClientApi) UpdateEventConnector(processId string, eventId string, connec
  * @param flowUpdateItem Flow object to edit
  * @return *FlowItem
  */
-func (a ClientApi) UpdateFlow(processId string, flowId string, flowUpdateItem FlowUpdateItem) (*FlowItem, *APIResponse, error) {
+func (a Client) UpdateFlow(processId string, flowId string, flowUpdateItem FlowUpdateItem) (*FlowItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -4678,7 +4678,7 @@ func (a ClientApi) UpdateFlow(processId string, flowId string, flowUpdateItem Fl
  * @param gatewayUpdateItem Gateway object to edit
  * @return *GatewayItem
  */
-func (a ClientApi) UpdateGateway(processId string, gatewayId string, gatewayUpdateItem GatewayUpdateItem) (*GatewayItem, *APIResponse, error) {
+func (a Client) UpdateGateway(processId string, gatewayId string, gatewayUpdateItem GatewayUpdateItem) (*GatewayItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -4746,7 +4746,7 @@ func (a ClientApi) UpdateGateway(processId string, gatewayId string, gatewayUpda
  * @param groupUpdateItem Group object to edit
  * @return *GroupItem
  */
-func (a ClientApi) UpdateGroup(id string, groupUpdateItem GroupUpdateItem) (*GroupItem, *APIResponse, error) {
+func (a Client) UpdateGroup(id string, groupUpdateItem GroupUpdateItem) (*GroupItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -4815,7 +4815,7 @@ func (a ClientApi) UpdateGroup(id string, groupUpdateItem GroupUpdateItem) (*Gro
  * @param inputOutputUpdateItem Input/Output object to edit
  * @return *InputOutputItem
  */
-func (a ClientApi) UpdateInputOutput(processId string, taskId string, inputoutputUid string, inputOutputUpdateItem InputOutputUpdateItem) (*InputOutputItem, *APIResponse, error) {
+func (a Client) UpdateInputOutput(processId string, taskId string, inputoutputUid string, inputOutputUpdateItem InputOutputUpdateItem) (*InputOutputItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -4885,7 +4885,7 @@ func (a ClientApi) UpdateInputOutput(processId string, taskId string, inputoutpu
  * @param instanceUpdateItem Instance object to edit
  * @return *InstanceItem
  */
-func (a ClientApi) UpdateInstance(processId string, instanceId string, instanceUpdateItem InstanceUpdateItem) (*InstanceItem, *APIResponse, error) {
+func (a Client) UpdateInstance(processId string, instanceId string, instanceUpdateItem InstanceUpdateItem) (*InstanceItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -4954,7 +4954,7 @@ func (a ClientApi) UpdateInstance(processId string, instanceId string, instanceU
  * @param oauthClientUpdateItem Oauth Client object to edit
  * @return *OauthClientItem
  */
-func (a ClientApi) UpdateOauthClient(userId string, clientId string, oauthClientUpdateItem OauthClientUpdateItem) (*OauthClientItem, *APIResponse, error) {
+func (a Client) UpdateOauthClient(userId string, clientId string, oauthClientUpdateItem OauthClientUpdateItem) (*OauthClientItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -5022,7 +5022,7 @@ func (a ClientApi) UpdateOauthClient(userId string, clientId string, oauthClient
  * @param processUpdateItem Process object to edit
  * @return *ProcessItem
  */
-func (a ClientApi) UpdateProcess(id string, processUpdateItem ProcessUpdateItem) (*ProcessItem, *APIResponse, error) {
+func (a Client) UpdateProcess(id string, processUpdateItem ProcessUpdateItem) (*ProcessItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -5090,7 +5090,7 @@ func (a ClientApi) UpdateProcess(id string, processUpdateItem ProcessUpdateItem)
  * @param taskUpdateItem Task object to edit
  * @return *TaskItem
  */
-func (a ClientApi) UpdateTask(processId string, taskId string, taskUpdateItem TaskUpdateItem) (*TaskItem, *APIResponse, error) {
+func (a Client) UpdateTask(processId string, taskId string, taskUpdateItem TaskUpdateItem) (*TaskItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -5160,7 +5160,7 @@ func (a ClientApi) UpdateTask(processId string, taskId string, taskUpdateItem Ta
  * @param taskConnectorUpdateItem TaskConnector object to edit
  * @return *TaskConnector1
  */
-func (a ClientApi) UpdateTaskConnector(processId string, taskId string, connectorId string, taskConnectorUpdateItem TaskConnectorUpdateItem) (*TaskConnector1, *APIResponse, error) {
+func (a Client) UpdateTaskConnector(processId string, taskId string, connectorId string, taskConnectorUpdateItem TaskConnectorUpdateItem) (*TaskConnector1, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -5229,7 +5229,7 @@ func (a ClientApi) UpdateTaskConnector(processId string, taskId string, connecto
  * @param taskInstanceUpdateItem Task instance object to update
  * @return *InlineResponse200
  */
-func (a ClientApi) UpdateTaskInstance(taskInstanceId string, taskInstanceUpdateItem TaskInstanceUpdateItem) (*InlineResponse200, *APIResponse, error) {
+func (a Client) UpdateTaskInstance(taskInstanceId string, taskInstanceUpdateItem TaskInstanceUpdateItem) (*InlineResponse200, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Patch")
 	// create path and map variables
@@ -5296,7 +5296,7 @@ func (a ClientApi) UpdateTaskInstance(taskInstanceId string, taskInstanceUpdateI
  * @param userUpdateItem User object for update
  * @return *UserItem
  */
-func (a ClientApi) UpdateUser(id string, userUpdateItem UserUpdateItem) (*UserItem, *APIResponse, error) {
+func (a Client) UpdateUser(id string, userUpdateItem UserUpdateItem) (*UserItem, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables

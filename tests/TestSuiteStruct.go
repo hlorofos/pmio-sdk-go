@@ -7,5 +7,5 @@ import (
 
 type ClientTestSuite struct {
 	suite.Suite
-	client *pmio.ClientApi
+	client *pmio.Client
 }

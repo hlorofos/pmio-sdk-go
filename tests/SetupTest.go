@@ -2,7 +2,6 @@ package tests
 
 import (
 	"encoding/json"
-	"log"
 	"math/rand"
 	"os"
 	"time"
@@ -14,16 +13,12 @@ func (suite *ClientTestSuite) SetupTest() {
 	cfg := OauthConfig{}
 	configFile, err := os.Open("../env.json")
 	defer configFile.Close()
-	if err != nil {
-		log.Fatal(err)
-	}
+	suite.Require().NoError(err)
 
 	err = json.NewDecoder(configFile).Decode(&cfg)
-	if err != nil {
-		log.Fatal(err)
-	}
+	suite.Require().NoError(err)
 
-	api := pmio.NewClientApi()
+	api := pmio.NewClient()
 	api.Configuration.BasePath = "https://" + cfg.Host + "/api/v1"
 	api.Configuration.Host = cfg.Host
 	api.Configuration.APIKey["Authorization"] = cfg.Key
